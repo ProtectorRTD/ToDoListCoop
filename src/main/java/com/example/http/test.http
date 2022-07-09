@@ -1,0 +1,13 @@
+#Лучше конечно проверять не тут http, а в postman-е, например тут он не работает, а насайте работает
+
+#POST http://localhost:8080/demo/user?email=123&password=112314141414141414
+#{
+#    "email":123,
+#    "password":112314141414141414
+#}
+
+#get запрос, на лист
+#GET http://localhost:8080/demo/user
+
+#удаляет юзера из бд с айдишником 1
+#GET http://localhost:8080/demo/user/1
