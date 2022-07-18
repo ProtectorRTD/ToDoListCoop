@@ -25,9 +25,15 @@ public class UserService implements UserServiceInterface {
     }
 
     public User findByEmail(String email){
+        if(email.isEmpty()){
+            return null;
+        }
         return userRepository.findByEmail(email);
     }
     public void deleteById(Long id){
+        if(id <= 0){
+            return;
+        }
         userRepository.deleteById(id);
     }
 

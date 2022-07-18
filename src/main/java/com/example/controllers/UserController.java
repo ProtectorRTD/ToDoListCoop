@@ -22,7 +22,7 @@ public class UserController {
     /*
     INSERT INTO "user" VALUES (1, '2', '3'); - в бд добавить пример
     http://localhost:8080/demo/user - показывает json-ом, все юзеры из бд (список)
-     */
+    */
 
     @GetMapping
     public List<User> findAll() {
@@ -32,18 +32,19 @@ public class UserController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody User resource) {
+        if(resource == null){
+            return;
+        }
         service.addUser(resource);
     }
 
     /*
-    в сервисе сделать проверку на нулл, чтобы можно было удалить
     http://localhost:8080/demo/user/1 - удаляет из бд юзера с id - 1
     */
     @GetMapping("/{id}")
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable("id") Long id) {
-        System.out.println("Id - " + id);
         service.deleteById(id);
     }
 

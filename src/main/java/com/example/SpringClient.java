@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 public class SpringClient {
     public static void main(String[] args) {
         SpringApplication.run(SpringClient.class);
-        User user = new User("da, 123", "1", 1L);
+
     }
 
 }
